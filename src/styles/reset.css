@@ -8,6 +8,8 @@
   background: none;
   border: none;
   list-style-type: none;
+  text-decoration: none;
+  color: black;
 }
 
 button {

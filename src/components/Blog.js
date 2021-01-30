@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react"
 import styles from "./blog.module.scss"
+import { Link } from "gatsby"
 
 export default function Blog(props) {
+  console.log(props.params)
   return (
     <main className={styles.main}>
       <h1>It Wiggles.</h1>
@@ -11,7 +13,18 @@ export default function Blog(props) {
           {props.posts.map(post => {
             return (
               <li className={styles.blogpost} key={post.id}>
-                <h2>{post.title}</h2>
+                <Link
+                  to={`/posts/${post.id}`}
+                  state={{
+                    post: {
+                      title: post.title,
+                      body: post.body,
+                      createdAt: post.created_at,
+                    },
+                  }}
+                >
+                  <h2>{post.title}</h2>
+                </Link>
                 <h3>{post.created_at.slice(0, 10)}</h3>
                 <p>{post.body}</p>
               </li>
