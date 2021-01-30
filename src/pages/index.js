@@ -1,31 +1,27 @@
 import React, { useState, useEffect } from "react"
 
-const url = "https://vast-fortress-99756.herokuapp.com/api/posts"
+import Blog from "../components/Blog"
+
+const url = "https://vast-fortress-99756.herokuapp.com/api"
 
 export default function Home() {
   const [posts, setPosts] = useState([])
+  const [pages, setPages] = useState([])
 
   async function fetchData() {
-    const data = await fetch(url, {
+    const postsData = await fetch(url + "/posts", {
       method: "GET",
     }).then(data => data.json())
-    setPosts(data.posts)
+    setPosts(postsData.posts)
+    const pagesData = await fetch(url + "/pages", {
+      method: "GET",
+    }).then(data => data.json())
+    setPages(pagesData.pages)
   }
 
   useEffect(() => {
     fetchData()
   }, [])
 
-  return (
-    <main>
-      <h1>What's poppin'</h1>
-      {posts.map(post => (
-        <article>
-          <h2>{post.title}</h2>
-          <h3>{post.created_at}</h3>
-          <p>{post.body}</p>
-        </article>
-      ))}
-    </main>
-  )
+  return <Blog posts={posts} pages={pages} />
 }

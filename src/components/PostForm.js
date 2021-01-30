@@ -11,9 +11,10 @@ export default function PostForm(props) {
 
   const updatePost = e => {
     e.preventDefault()
-    props.updatePost({ title, body, id: props.id })
+    title && body ? props.updatePost({ title, body, id: props.id }) : void 0
     props.toggleForm()
   }
+
   const createPost = e => {
     e.preventDefault()
     title && body ? props.createPost({ title, body }) : void 0
