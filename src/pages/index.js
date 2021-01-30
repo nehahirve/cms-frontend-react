@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from "react"
 
-const url = "http://localhost:8080/api/posts.php"
+const url = "https://vast-fortress-99756.herokuapp.com/api/posts"
 
 export default function Home() {
   const [posts, setPosts] = useState([])
 
   async function fetchData() {
-    const data = await fetch(url, { method: "GET" }).then(data => data.json())
+    const data = await fetch(url, {
+      method: "GET",
+    }).then(data => data.json())
     setPosts(data.posts)
-    console.log(posts)
   }
 
   useEffect(() => {
@@ -18,7 +19,6 @@ export default function Home() {
   return (
     <main>
       <h1>What's poppin'</h1>
-
       {posts.map(post => (
         <article>
           <h2>{post.title}</h2>
