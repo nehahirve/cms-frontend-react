@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react"
 
 import Blog from "../components/Blog"
+import Nav from "../components/Nav"
 
 const url = "https://vast-fortress-99756.herokuapp.com/api"
 
@@ -23,5 +24,10 @@ export default function Home() {
     fetchData()
   }, [])
 
-  return <Blog posts={posts} pages={pages} />
+  return (
+    <>
+      <Blog posts={posts} pages={pages} />
+      <Nav pages={pages} />
+    </>
+  )
 }

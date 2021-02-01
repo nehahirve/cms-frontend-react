@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 
-import styles from "./postform.module.scss"
+import styles from "../styles/PostForm.module.scss"
 
 export default function PostForm(props) {
   const [title, setTitle] = useState(props.title || "")

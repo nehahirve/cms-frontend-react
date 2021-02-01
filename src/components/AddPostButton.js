@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
 import PostForm from "./PostForm"
 
-import styles from "./addpostbutton.module.scss"
+import styles from "../styles/AddPostButton.module.scss"
 
 export default function AddPostButton(props) {
   const [isOpen, setIsOpen] = useState(false)

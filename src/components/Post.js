@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 
-import styles from "./post.module.scss"
+import styles from "../styles/Post.module.scss"
 
 export default function Post(props) {
   return (

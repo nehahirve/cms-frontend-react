@@ -1,0 +1,56 @@
+.main {
+  max-width: 1200px;
+  margin: auto;
+  h1 {
+    font-size: 5rem;
+    padding: 3rem 0 1rem 0;
+  }
+
+  h2 {
+    font-family: "Lexend Zetta";
+    font-size: 1.5rem;
+    word-break: keep-all;
+  }
+  h3 {
+    font-style: italic;
+    font-size: 1rem;
+  }
+  p {
+    font-size: 1.2rem;
+  }
+  hr {
+    max-width: 50%;
+    margin: auto;
+    border: 2px solid black;
+    border-bottom: none;
+    margin-bottom: 4rem;
+  }
+
+  ul {
+    list-style-type: none;
+    margin: auto;
+
+    .blogpost {
+      border: 2px solid;
+      width: 300px;
+      margin-bottom: 10px;
+      padding: 0.7rem;
+      text-align: left;
+      display: inline;
+      * {
+        text-align: left;
+        display: inline;
+      }
+    }
+  }
+
+  section {
+    margin-bottom: 3rem;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .main ul .blogpost {
+    width: 500px;
+  }
+}

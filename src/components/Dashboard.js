@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react"
 import AddPostButton from "./AddPostButton"
 import PostList from "./PostList"
 
-import styles from "./dashboard.module.scss"
+import styles from "../styles/Dashboard.module.scss"
 
 const url = "https://vast-fortress-99756.herokuapp.com/api"
 

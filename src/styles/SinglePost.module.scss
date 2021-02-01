@@ -17,14 +17,6 @@
     margin-bottom: 4rem;
   }
 
-  ul {
-    list-style-type: none;
-    .blogpost {
-      border: 2px solid;
-      margin: 2rem;
-    }
-  }
-
   section {
     margin-bottom: 3rem;
   }
@@ -34,6 +26,7 @@
     display: flex;
     justify-content: space-around;
   }
+
   button {
     border: none;
     margin-bottom: 5rem;
@@ -41,5 +34,38 @@
 
   button svg {
     max-width: 10rem;
+  }
+}
+
+.main {
+  max-width: 1200px;
+  margin: auto;
+  h1 {
+    font-size: 5rem;
+    padding: 3rem 0 1rem 0;
+  }
+  hr {
+    max-width: 50%;
+    margin: auto;
+    border: 2px solid black;
+    border-bottom: none;
+    margin-bottom: 4rem;
+  }
+
+  article {
+    width: 50%;
+    margin: auto;
+
+    padding: 1rem;
+    margin-bottom: 2rem;
+    border: 2px solid;
+    background-color: #fbecdb;
+    h2 {
+      margin-bottom: 1rem;
+    }
+    * {
+      text-align: left;
+      font-size: 1.6rem;
+    }
   }
 }
