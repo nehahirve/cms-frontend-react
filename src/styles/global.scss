@@ -4,3 +4,10 @@ body {
   background-size: 120vw;
   background-position: center right;
 }
+
+img {
+  width: 100%;
+  border: green;
+  padding: 2rem;
+  filter: grayscale(1);
+}

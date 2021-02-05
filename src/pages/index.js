@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react"
-
+import axios from "axios"
 import Blog from "../components/Blog"
 import Nav from "../components/Nav"
 
@@ -10,13 +10,15 @@ export default function Home() {
   const [pages, setPages] = useState([])
 
   async function fetchData() {
-    const postsData = await fetch(url + "/posts", {
+    const postsData = await axios({
+      url: url + "/posts",
       method: "GET",
-    }).then(data => data.json())
+    }).then(response => response.data)
     setPosts(postsData.posts)
-    const pagesData = await fetch(url + "/pages", {
+    const pagesData = await axios({
+      url: url + "/pages",
       method: "GET",
-    }).then(data => data.json())
+    }).then(response => response.data)
     setPages(pagesData.pages)
   }
 

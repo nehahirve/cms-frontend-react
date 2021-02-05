@@ -5,6 +5,7 @@
  */
 
 module.exports = {
+  pathPrefix: "/cms-frontend-react",
   plugins: [
     {
       resolve: `gatsby-plugin-sass`,

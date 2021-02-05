@@ -12,7 +12,6 @@ export default function Page(props) {
       <article>
         <p>{body}</p>
       </article>
-      <Nav pages={props.pages} />
     </main>
   )
 }

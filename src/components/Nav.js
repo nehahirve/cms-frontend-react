@@ -11,7 +11,7 @@ export default function Nav(props) {
           {props.pages.map(page => {
             return (
               <Link
-                to={`/${page.title}`}
+                to={`/${page.slug}`}
                 state={{
                   page: {
                     title: page.title,
