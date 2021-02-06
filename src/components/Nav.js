@@ -1,14 +1,17 @@
-import React, { useState, useEffect } from "react"
+import React, { useContext } from "react"
 import { Link } from "gatsby"
+import { GlobalStateContext } from "../context/GlobalContextProvider"
 
 import styles from "../styles/Nav.module.scss"
 
-export default function Nav(props) {
-  return (
+export default function Nav() {
+  const state = useContext(GlobalStateContext)
+
+  return state.pages ? (
     <>
       <nav className={styles.nav}>
         <ul>
-          {props.pages.map(page => {
+          {state.pages.map(page => {
             return (
               <Link
                 to={`/${page.slug}`}
@@ -17,7 +20,7 @@ export default function Nav(props) {
                     title: page.title,
                     body: page.body,
                   },
-                  pages: props.pages,
+                  pages: state.pages,
                 }}
               >
                 <li key={page.id}>{page.title}</li>
@@ -43,5 +46,5 @@ export default function Nav(props) {
         </button>
       </Link>
     </>
-  )
+  ) : null
 }

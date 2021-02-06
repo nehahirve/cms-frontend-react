@@ -1,6 +1,3 @@
-import "./src/styles/reset.css"
-import "./src/styles/global.scss"
-
 import React from "react"
 import GlobalContextProvider from "./src/context/GlobalContextProvider"
 
