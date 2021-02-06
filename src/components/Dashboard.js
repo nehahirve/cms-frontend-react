@@ -50,10 +50,11 @@ export default function Dashboard(props) {
   }
 
   const updatePost = post => {
-    const { title, body, id } = post
+    const { title, body, id, imageUrl } = post
+    console.log(imageUrl, mode, id)
     fetch(`${url}/${mode}/${id}`, {
       method: "PUT",
-      body: JSON.stringify({ title, body }),
+      body: JSON.stringify({ title, body, url: imageUrl }),
     }).then(post => post.json())
 
     mode === "posts"
@@ -63,6 +64,7 @@ export default function Dashboard(props) {
               ? Object.assign({}, oldPost, {
                   title: post.title,
                   body: post.body,
+                  url: post.url,
                 })
               : oldPost
           })
@@ -73,6 +75,7 @@ export default function Dashboard(props) {
               ? Object.assign({}, oldPost, {
                   title: post.title,
                   body: post.body,
+                  url: post.url,
                 })
               : oldPost
           })

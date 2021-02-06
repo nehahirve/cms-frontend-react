@@ -12,7 +12,8 @@
     }
     border: 1px solid;
     text-align: left;
-    &[name="title"] {
+    &[name="title"],
+    &[name="url"] {
       font-family: "Lexend Mega";
       font-size: 2rem;
       text-overflow: ellipsis;

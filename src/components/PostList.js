@@ -11,6 +11,7 @@ export default function PostList(props) {
             title={post.title}
             body={post.body}
             id={post.id}
+            imageUrl={post.url}
             createdAt={post.created_at}
             updatePost={props.updatePost}
             deletePost={props.deletePost}

@@ -21,6 +21,7 @@ export default function ToggleablePost(props) {
           id={props.id}
           title={props.title}
           body={props.body}
+          imageUrl={props.imageUrl}
           toggleForm={toggleForm}
           updatePost={props.updatePost}
           deletePost={props.deletePost}

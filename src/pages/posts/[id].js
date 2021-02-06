@@ -42,6 +42,7 @@ export default function Id(props) {
     if (props.location.state) {
       const { title, body, createdAt, image } = props.location.state.post
       setPost({ title, body, createdAt, image })
+      setPages(props.location.state.pages)
     } else {
       fetchData()
     }

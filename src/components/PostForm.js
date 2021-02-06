@@ -5,19 +5,24 @@ import styles from "../styles/PostForm.module.scss"
 export default function PostForm(props) {
   const [title, setTitle] = useState(props.title || "")
   const [body, setBody] = useState(props.body || "")
+  const [imageUrl, setImageUrl] = useState(props.imageUrl || "")
 
   const updateTitle = e => setTitle(e.target.value)
   const updateBody = e => setBody(e.target.value)
+  const updateUrl = e => setImageUrl(e.target.value)
 
   const updatePost = e => {
+    console.log(props.imageUrl)
     e.preventDefault()
-    title && body ? props.updatePost({ title, body, id: props.id }) : void 0
+    title && body
+      ? props.updatePost({ title, body, imageUrl, id: props.id })
+      : void 0
     props.toggleForm()
   }
 
   const createPost = e => {
     e.preventDefault()
-    title && body ? props.createPost({ title, body }) : void 0
+    title && body ? props.createPost({ title, body, imageUrl }) : void 0
     props.toggleForm()
   }
 
@@ -37,6 +42,13 @@ export default function PostForm(props) {
         className={styles.body}
         value={body}
         onChange={updateBody}
+      />
+      <input
+        name="url"
+        type="text"
+        className={styles.title}
+        value={imageUrl}
+        onChange={updateUrl}
       />
       <div className={styles.buttons}>
         <button type="button" onClick={props.toggleForm}>
