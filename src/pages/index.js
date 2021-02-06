@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react"
+import React, { useContext } from "react"
 import Blog from "../components/Blog"
 import Nav from "../components/Nav"
 import Loading from "../components/Loading"
@@ -11,7 +11,7 @@ export default function Home() {
     <>
       {state.posts && (
         <>
-          <Blog posts={state.posts} pages={state.pages} />
+          <Blog />
           <Nav />
         </>
       )}

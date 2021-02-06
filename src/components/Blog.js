@@ -1,7 +1,8 @@
 import * as React from "react"
+import { useContext } from "react"
 import Masonry from "react-masonry-component"
 import { Link } from "gatsby"
-import Nav from "./Nav"
+import { GlobalStateContext } from "../context/GlobalContextProvider"
 
 import styles from "../styles/Blog.module.scss"
 
@@ -14,7 +15,9 @@ const masonryOptions = {
   // horizontalOrder: true,
 }
 
-export default function Blog(props) {
+export default function Blog() {
+  const state = useContext(GlobalStateContext)
+
   return (
     <main className={styles.main}>
       <h1>It Wiggles.</h1>
@@ -24,7 +27,7 @@ export default function Blog(props) {
           elementType={"ul"} // default 'div'
           options={masonryOptions}
         >
-          {props.posts.map(post => {
+          {state.posts.map(post => {
             return (
               <li className={styles.blogpost} key={post.id}>
                 <Link
@@ -36,7 +39,7 @@ export default function Blog(props) {
                       createdAt: post.created_at,
                       image: post.url,
                     },
-                    pages: props.pages,
+                    pages: state.pages,
                   }}
                 >
                   <h2>{post.title}</h2>

@@ -62,7 +62,7 @@ export default function Id(props) {
           }}
           pages={pages}
         />
-        <Nav pages={pages} />
+        <Nav />
       </>
     )
 }
