@@ -1,0 +1,26 @@
+.rte {
+  background: none;
+  outline: none;
+  border: 1px solid;
+  border-radius: 0;
+  &:focus-within {
+    border: 2px solid;
+    outline: none;
+  }
+  div {
+    border: none;
+    float: left;
+  }
+
+  button {
+    background: none;
+    outline: none;
+    border: 2px solid;
+  }
+  * {
+    font-size: 2rem;
+  }
+  .custom {
+    background: transparent;
+  }
+}

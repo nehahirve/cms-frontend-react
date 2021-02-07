@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from "react"
-import Nav from "./Nav"
 import { GlobalStateContext } from "../context/GlobalContextProvider"
 import styles from "../styles/Page.module.scss"
+import ReactMarkdown from "react-markdown"
 
 export default function Page(props) {
   const state = useContext(GlobalStateContext)
@@ -17,7 +17,7 @@ export default function Page(props) {
       <h1>{page.title}</h1>
       <hr />
       <article>
-        <p>{page.body}</p>
+        <ReactMarkdown children={page.body} />
       </article>
     </main>
   ) : (

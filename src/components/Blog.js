@@ -3,16 +3,14 @@ import { useContext } from "react"
 import Masonry from "react-masonry-component"
 import { Link } from "gatsby"
 import { GlobalStateContext } from "../context/GlobalContextProvider"
+import ReactMarkdown from "react-markdown"
 
 import styles from "../styles/Blog.module.scss"
 
 const masonryOptions = {
   transitionDuration: 0,
   gutter: 10,
-  // columnWidth: ".blogpost",
   fitWidth: true,
-  // percentPosition: true,
-  // horizontalOrder: true,
 }
 
 export default function Blog() {
@@ -45,7 +43,8 @@ export default function Blog() {
                   <h2>{post.title}</h2>
 
                   <h3>{post.created_at.slice(0, 10) + ". "}</h3>
-                  <p>{post.body}</p>
+                  <ReactMarkdown children={post.body} />
+
                   <img src={post.url} alt="" />
                 </Link>
               </li>

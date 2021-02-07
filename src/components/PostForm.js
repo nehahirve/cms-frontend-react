@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react"
-
+import React, { useEffect, useMemo, useState } from "react"
+import RTE from "./RTE"
 import styles from "../styles/PostForm.module.scss"
 
 export default function PostForm(props) {
@@ -8,7 +8,10 @@ export default function PostForm(props) {
   const [imageUrl, setImageUrl] = useState(props.imageUrl || "")
 
   const updateTitle = e => setTitle(e.target.value)
-  const updateBody = e => setBody(e.target.value)
+  const updateBody = value => {
+    setBody(value)
+    console.log(body)
+  }
   const updateUrl = e => setImageUrl(e.target.value)
 
   const updatePost = e => {
@@ -22,6 +25,7 @@ export default function PostForm(props) {
 
   const createPost = e => {
     e.preventDefault()
+
     title && body ? props.createPost({ title, body, imageUrl }) : void 0
     props.toggleForm()
   }
@@ -37,12 +41,14 @@ export default function PostForm(props) {
         value={title}
         onChange={updateTitle}
       />
-      <textarea
+      {/* <textarea
         name="body"
         className={styles.body}
         value={body}
-        onChange={updateBody}
-      />
+        // onChange={updateBody}
+      /> */}
+      <RTE onChange={updateBody} body={body} />
+
       <input
         name="url"
         type="text"

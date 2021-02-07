@@ -13,16 +13,7 @@ export default function Nav() {
         <ul>
           {state.pages.map(page => {
             return (
-              <Link
-                to={`/${page.slug}`}
-                state={{
-                  page: {
-                    title: page.title,
-                    body: page.body,
-                  },
-                  pages: state.pages,
-                }}
-              >
+              <Link to={`/${page.slug}`}>
                 <li key={page.id}>{page.title}</li>
               </Link>
             )
