@@ -2,12 +2,17 @@ body {
   background: url("../../static/bg.svg");
   background-repeat: repeat-y;
   background-size: 120vw;
-  background-position: center right;
+  background-position: top center;
 }
 
 img {
   width: 100%;
   border: green;
   padding: 2rem;
+  margin-top: 1rem;
   filter: grayscale(1);
+}
+
+del {
+  text-decoration: line-through;
 }

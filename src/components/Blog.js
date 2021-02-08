@@ -4,12 +4,13 @@ import Masonry from "react-masonry-component"
 import { Link } from "gatsby"
 import { GlobalStateContext } from "../context/GlobalContextProvider"
 import ReactMarkdown from "react-markdown"
+import gfm from "remark-gfm"
 
 import styles from "../styles/Blog.module.scss"
 
 const masonryOptions = {
   transitionDuration: 0,
-  gutter: 10,
+  gutter: 20,
   fitWidth: true,
 }
 
@@ -43,7 +44,7 @@ export default function Blog() {
                   <h2>{post.title}</h2>
 
                   <h3>{post.created_at.slice(0, 10) + ". "}</h3>
-                  <ReactMarkdown children={post.body} />
+                  <ReactMarkdown plugins={[gfm]} children={post.body} />
 
                   <img src={post.url} alt="" />
                 </Link>

@@ -21,10 +21,12 @@
     "gatsby-plugin-sass": "^3.1.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
+    "react-loader-spinner": "^4.0.0",
     "react-markdown": "^5.0.3",
     "react-masonry-component": "^6.2.1",
     "react-packery-component": "^1.0.2",
-    "react-rte": "^0.16.3"
+    "react-rte": "^0.16.3",
+    "remark-gfm": "^1.0.0"
   },
   "devDependencies": {
     "css-loader": "^1.0.1",

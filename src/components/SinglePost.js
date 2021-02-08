@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react"
 import { GlobalStateContext } from "../context/GlobalContextProvider"
 import ReactMarkdown from "react-markdown"
+import Four04 from "./Four04"
 import styles from "../styles/SinglePost.module.scss"
 
 export default function SinglePost(props) {
@@ -28,6 +29,6 @@ export default function SinglePost(props) {
       </article>
     </main>
   ) : (
-    <div>404 NOT FOUND</div>
+    <Four04 />
   )
 }

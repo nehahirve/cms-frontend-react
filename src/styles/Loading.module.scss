@@ -1,0 +1,25 @@
+.main {
+  max-width: 1200px;
+  margin: auto;
+  h1 {
+    font-size: 5rem;
+    padding: 3rem 0 1rem 0;
+  }
+  hr {
+    max-width: 50%;
+    margin: auto;
+    border: 2px solid black;
+    border-bottom: none;
+    margin-bottom: 4rem;
+  }
+
+  article {
+    width: 50%;
+    margin: auto;
+    text-align: left;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    border: 2px solid;
+    background-color: #fbecdb;
+  }
+}

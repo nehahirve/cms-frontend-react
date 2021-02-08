@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from "react"
 import { GlobalStateContext } from "../context/GlobalContextProvider"
 import styles from "../styles/Page.module.scss"
 import ReactMarkdown from "react-markdown"
+import Four04 from "./Four04"
 
 export default function Page(props) {
   const state = useContext(GlobalStateContext)
@@ -21,6 +22,6 @@ export default function Page(props) {
       </article>
     </main>
   ) : (
-    <div>404 NOT FOUND</div>
+    <Four04 />
   )
 }
