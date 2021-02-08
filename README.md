@@ -1,99 +1,73 @@
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
-<p align="center">
-  <a href="https://www.gatsbyjs.com">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
-  </a>
-</p>
 <h1 align="center">
-  Gatsby's hello-world starter
+  Headless CMS - Frontend and Backend
 </h1>
 
-Kick off your project with this hello-world boilerplate. This starter ships with the main Gatsby configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
+**A <a href="https://www.hyperisland.com/" target="_blank">Hyper Island</a> Student Project**
 
-_Have another more specific idea? You may want to check out our vibrant collection of [official and community-created starters](https://www.gatsbyjs.com/docs/gatsby-starters/)._
+**About:**
 
-## 🚀 Quick start
+This blog is half the result of exercise in building a headless CMS with PHP using the Slim framework and the Fetch API on the frontend.
 
-1.  **Create a Gatsby site.**
+Our brief was to simply create a locally-served API that connected to a MySQL schema with news posts and pages, and to use this API in some kind of front-end interface, with both a display page and an /admin page, where an admin could theoretically update and edit the blog. Both ends were meant to be built swappable with another framework or language.
 
-    Use the Gatsby CLI to create a new site, specifying the hello-world starter.
+Since it was out of scope, currently, there's no user authentication, no restrictions to the /admin path, or CORS restrictions on the API, so literally anyone can GET / PUT / POST / DELETE from the CMS, which makes either for very bad practice or an amusing social experiment.
 
-    ```shell
-    # create a new Gatsby site using the hello-world starter
-    gatsby new my-hello-world-starter https://github.com/gatsbyjs/gatsby-starter-hello-world
-    ```
+**Back-end:**  
+I initially coded a RESTish API from scratch using PHP,[whose code is here](https://github.com/nehahirve/cms-backend). Later, I switched to a skeleton template from David Eriksson with the Slim framework, to take advantage of its easy routing set up and middleware features.
 
-1.  **Start developing.**
+The API can be accessed at https://vast-fortress-99756.herokuapp.com/api, where there are two endpoints, /posts and /pages, that return JSON responses.
 
-    Navigate into your new site’s directory and start it up.
+**Front-end:**  
+I considered using Vue to develop the front-end, [and started here](https://github.com/nehahirve/cms-frontend-vue), but decided to up my react / Gatbsy game instead, using many things for the first time, like the useContext hook, the useMemo hook, a globalContextProvider, wrapping the root element, and Gatsby's new file system route API.
 
-    ```shell
-    cd my-hello-world-starter/
-    gatsby develop
-    ```
+**Things I learnt:**
 
-1.  **Open the source code and start editing!**
+- PHP
+- The PDO object in PHP
+- MySQL
+- PHPStorm
+- DataGrip
+- Setting up an API
+- The basics of routing
+- The Slim framwork
+- Deploying a backend app to Heroku
+- Some Vue.js (that didn't end up being the framework I went with)
+- Newer / more advanced React features
+- Axios -- but will favour the Fetch API in the future.
 
-    Your site is now running at `http://localhost:8000`!
+**Development vs Production challenges:**
 
-    _Note: You'll also see a second link: _`http://localhost:8000/___graphql`_. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.com/tutorial/part-five/#introducing-graphiql)._
+I've started noting these down, since build / production errors are things I'd like to get better at troubleshooting.
 
-    Open the `my-hello-world-starter` directory in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
+1. Learnt that Heroku can only store the contents of .pem files as environment variables, and the PDO connection to the MySQL database required the filepaths. I eneded up using a createTempFile function in production.
 
-## 🧐 What's inside?
+2. Using the react RTE gave me build problems, as the package was already bundled with webpack and Gatsby uses webpack again. I had to learn to provide a custom webpack config to Gatsby.
 
-A quick look at the top-level files and directories you'll see in a Gatsby project.
+**Tools and Tech stack:**
 
-    .
-    ├── node_modules
-    ├── src
-    ├── .gitignore
-    ├── .prettierrc
-    ├── gatsby-browser.js
-    ├── gatsby-config.js
-    ├── gatsby-node.js
-    ├── gatsby-ssr.js
-    ├── LICENSE
-    ├── package-lock.json
-    ├── package.json
-    └── README.md
+[PHP:](https://www.php.net/) “PHP is a popular general-purpose scripting language that is especially suited to web development.”
 
-1.  **`/node_modules`**: This directory contains all of the modules of code that your project depends on (npm packages) are automatically installed.
+[Gatsbyjs:](https://www.gatsbyjs.com/) “An open-source framework based on React that helps developers build blazing-fast websites and apps.”
 
-2.  **`/src`**: This directory will contain all of the code related to what you will see on the front-end of your site (what you see in the browser) such as your site header or a page template. `src` is a convention for “source code”.
+[Slim:](https://www.slimframework.com/) “Slim is a PHP micro framework that helps you quickly write simple yet powerful web applications and APIs.”
 
-3.  **`.gitignore`**: This file tells git which files it should not track / not maintain a version history for.
+[Postman:](https://www.postman.com/) "The Collaboration Platform for API Development."
 
-4.  **`.prettierrc`**: This is a configuration file for [Prettier](https://prettier.io/). Prettier is a tool to help keep the formatting of your code consistent.
+[PhpStorm:](https://www.jetbrains.com/phpstorm/?gclid=Cj0KCQiA34OBBhCcARIsAG32uvNtIGkui4WR0kPpugszk948-QDBOormPQ4oeV2wrspNnJ2DHT5VGpoaAlLpEALw_wcB) "The Lightning-Smart PHP IDE."
 
-5.  **`gatsby-browser.js`**: This file is where Gatsby expects to find any usage of the [Gatsby browser APIs](https://www.gatsbyjs.com/docs/browser-apis/) (if any). These allow customization/extension of default Gatsby settings affecting the browser.
+[DataGrip:](https://www.jetbrains.com/datagrip/) "Many databases, one tool."
 
-6.  **`gatsby-config.js`**: This is the main configuration file for a Gatsby site. This is where you can specify information about your site (metadata) like the site title and description, which Gatsby plugins you’d like to include, etc. (Check out the [config docs](https://www.gatsbyjs.com/docs/gatsby-config/) for more detail).
+[Heroku:](https://www.heroku.com) "Heroku is a platform as a service (PaaS) that enables developers to build, run, and operate applications entirely in the cloud."
 
-7.  **`gatsby-node.js`**: This file is where Gatsby expects to find any usage of the [Gatsby Node APIs](https://www.gatsbyjs.com/docs/node-apis/) (if any). These allow customization/extension of default Gatsby settings affecting pieces of the site build process.
+[MySQL:](https://www.mysql.com/) "MySQL Database Service is a fully managed database service to deploy cloud-native applications."
 
-8.  **`gatsby-ssr.js`**: This file is where Gatsby expects to find any usage of the [Gatsby server-side rendering APIs](https://www.gatsbyjs.com/docs/ssr-apis/) (if any). These allow customization of default Gatsby settings affecting server-side rendering.
+**Libraries and dependencies:**
 
-9.  **`LICENSE`**: This Gatsby starter is licensed under the 0BSD license. This means that you can see this file as a placeholder and replace it with your own license.
+[axios:](https://www.npmjs.com/package/axios) Promise based HTTP client for the browser and node.js.
 
-10. **`package-lock.json`** (See `package.json` below, first). This is an automatically generated file based on the exact versions of your npm dependencies that were installed for your project. **(You won’t change this file directly).**
+[react-markdown:](https://www.npmjs.com/package/react-markdown) Markdown component for React using remark.
 
-11. **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for your project.
+[react-rte:](https://www.npmjs.com/package/react-rte) a UI component built completely in React that is meant to be a full-featured textarea replacement, based on raft.js
 
-12. **`README.md`**: A text file containing useful reference information about your project.
-
-## 🎓 Learning Gatsby
-
-Looking for more guidance? Full documentation for Gatsby lives [on the website](https://www.gatsbyjs.com/). Here are some places to start:
-
-- **For most developers, we recommend starting with our [in-depth tutorial for creating a site with Gatsby](https://www.gatsbyjs.com/tutorial/).** It starts with zero assumptions about your level of ability and walks through every step of the process.
-
-- **To dive straight into code samples, head [to our documentation](https://www.gatsbyjs.com/docs/).** In particular, check out the _Guides_, _API Reference_, and _Advanced Tutorials_ sections in the sidebar.
-
-## 💫 Deploy
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-hello-world)
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/gatsbyjs/gatsby-starter-hello-world)
-
-<!-- AUTO-GENERATED-CONTENT:END -->
+[masonry:](https://masonry.desandro.com/) JavaScript grid layout library.
