@@ -48,6 +48,7 @@
         -webkit-line-clamp: 10;
         -webkit-box-orient: vertical;
         overflow: hidden;
+        margin-top: 1rem;
       }
       * {
         text-overflow: ellipsis;
@@ -58,7 +59,7 @@
         display: inline;
       }
       &:hover {
-        background: #fbecdb;
+        background: #ffeb87;
       }
     }
   }

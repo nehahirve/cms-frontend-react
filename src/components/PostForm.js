@@ -4,7 +4,7 @@ import styles from "../styles/PostForm.module.scss"
 
 export default function PostForm(props) {
   const [title, setTitle] = useState(props.title || "")
-  const [body, setBody] = useState(props.body || "")
+  const [body, setBody] = useState(props.body || "start typing")
   const [imageUrl, setImageUrl] = useState(props.imageUrl || "")
 
   const updateTitle = e => setTitle(e.target.value)
