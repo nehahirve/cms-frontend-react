@@ -42,7 +42,7 @@ I've started noting these down, since build / production errors are things I'd l
 
 1. Learnt that Heroku can only store the contents of .pem files as environment variables, and the PDO connection to the MySQL database required the filepaths. I eneded up using a createTempFile function in production.
 
-2. Using the react RTE gave me build problems, as the package was already bundled with webpack and Gatsby uses webpack again. I had to learn to provide a custom webpack config to Gatsby.
+2. Using the react RTE gave me build problems, as the package was already bundled with webpack and Gatsby uses webpack again. The unbundled package had its own problems, I had to change the CSS classes to not use hyphens in order to get it to work, and change the .css to a .module.css extension that gatsby recognised. So this won't build if you develop it on your own machine, you'll have to import the dist. package instead, from 'react-rte'
 
 **Tools and Tech stack:**
 

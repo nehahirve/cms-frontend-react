@@ -11,10 +11,19 @@
     border: none;
     float: left;
   }
+  & > div {
+    // padding: 2rem;
+  }
 
   button {
+    margin: 1rem;
     background: none;
     outline: none;
+    width: 2rem;
+    height: 2rem;
+    padding: none;
+    display: flex;
+    align-items: center;
     border: 2px solid;
   }
   * {

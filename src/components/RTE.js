@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useState } from "react"
-import RichTextEditor from "react-rte"
+import RichTextEditor from "react-rte/lib/RichTextEditor"
 import styles from "../styles/RTE.module.scss"
 
 const toolbarConfig = {
